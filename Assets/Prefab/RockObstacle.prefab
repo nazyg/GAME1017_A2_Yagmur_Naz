@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 3970346220434678992}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.1546059, y: 2.1637597, z: 8.294}
+  m_LocalPosition: {x: -0, y: -0.08, z: 8.294}
   m_LocalScale: {x: 0.31, y: 0.31, z: 0.31}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 2220304692335220629}
   m_Layer: 0
   m_Name: RockObstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,7 +114,7 @@ Transform:
   m_GameObject: {fileID: 7734490416290100555}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1546059, y: -2.1637597, z: -8.294}
+  m_LocalPosition: {x: -4.43, y: 3.55, z: -8.294}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -151,7 +151,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -182,7 +182,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3.13
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
