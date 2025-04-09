@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -39,31 +40,30 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("jump", true);
         }
 
-        // Slide animasyonu (S tuşuna basılıyken)
-        if (Input.GetKey(KeyCode.S))
-        {
-            animator.SetBool("slide", true);
-        }
-        else
-        {
-            animator.SetBool("slide", false);
-        }
-
-        // Ölme animasyonu (L tuşuna basınca)
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            animator.SetTrigger("die");
-        }
+        // Slide animasyonu
+        animator.SetBool("slide", Input.GetKey(KeyCode.S));
 
         // Yerde olup olmadığını kontrol et
-        if (Mathf.Abs(rb.linearVelocity.y) < 0.01f)
+        isGrounded = Mathf.Abs(rb.linearVelocity.y) < 0.01f;
+        animator.SetBool("jump", !isGrounded);
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
         {
-            isGrounded = true;
-            animator.SetBool("jump", false);
+            Debug.Log("Taşa çarptı!");
+            animator.SetTrigger("die");
+
+            rb.linearVelocity = Vector2.zero;
+            rb.bodyType = RigidbodyType2D.Static;
+
+            Invoke("GoToGameOver", 1f);
         }
-        else
-        {
-            isGrounded = false;
-        }
+    }
+
+    void GoToGameOver()
+    {
+        SceneManager.LoadScene("GameoverScene");
     }
 }
