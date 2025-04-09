@@ -3,7 +3,7 @@
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float jumpForce = 8f;
+    public float jumpForce = 10f;
 
     private Rigidbody2D rb;
     private Animator animator;
